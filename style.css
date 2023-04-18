@@ -58,8 +58,10 @@ body {
 }
 
 .contenedor_advertencia_botones {
+  width: 522px;
   margin-top: 420px;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .encriptador_boton {
@@ -110,7 +112,7 @@ body {
 .advertencia {
   display: flex;
   gap: 5px;
-  width: 500px;
+  width: 328px;
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
@@ -121,10 +123,6 @@ body {
   .encabezado {
     margin-top: 24px;
     margin-left: 16px;
-  }
-
-  .contenedor-display {
-    margin-left: 70px;
   }
 
   .imagen_caja_con_respuesta {
@@ -143,19 +141,14 @@ body {
     margin-left: 70px;
   }
 
-  .advertencia {
-    margin-left: 100px;
-  }
-
   .contenedor_advertencia_botones {
-    margin-top: 150px;
-    margin-right: 70px;
+    margin-top: 200px;
+    align-items: center;
   }
 
   .contenedor-botones {
     flex-direction: column;
     gap: 6px;
-    align-items: center;
     margin-bottom: 10px;
   }
 
