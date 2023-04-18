@@ -29,8 +29,12 @@
               <button class="encriptador_boton" onclick="encriptador()">
                 Encriptar
               </button>
-              <button class="desencriptador_boton">Desencriptar</button>
-              <button class="borrar_boton">Limpiar</button>
+              <button class="desencriptador_boton" onclick="desencriptador()">
+                Desencriptar
+              </button>
+              <button class="borrar_boton" onclick="limpiarDisplay()">
+                Limpiar
+              </button>
             </div>
           </div>
         </div>
@@ -47,6 +51,7 @@
         </div>
       </div>
     </main>
+
     <script>
       function encriptador() {
         const areaTexto = document.getElementById("area_de_texto").value;
@@ -70,7 +75,85 @@
         document.getElementById(
           "caja_con_respuesta"
         ).innerHTML = `<p id='resultado_texto'>${textoEncriptado}</p> 
-        <button onclick='copiar()'>Copiar</button>`;
+        <button onclick='copiar()' class="copiar_boton">Copiar</button>`;
+      }
+
+      function desencriptador() {
+        const areaTexto = document.getElementById("area_de_texto").value;
+        const mapaVocales = {
+          ai: "a",
+          enter: "e",
+          imes: "i",
+          ober: "o",
+          ufat: "u",
+        };
+        let textoDesencriptado = "";
+        for (let i = 0; i < areaTexto.length; i++) {
+          if (areaTexto[i] === "a") {
+            if (areaTexto.slice(i, i + 2) === "ai") {
+              textoDesencriptado += mapaVocales["ai"];
+              i++;
+            } else {
+              textoDesencriptado += areaTexto[i];
+            }
+          } else if (areaTexto[i] === "e") {
+            if (areaTexto.slice(i, i + 5) === "enter") {
+              textoDesencriptado += mapaVocales["enter"];
+              i += 4;
+            } else {
+              textoDesencriptado += areaTexto[i];
+            }
+          } else if (areaTexto[i] === "i") {
+            if (areaTexto.slice(i, i + 4) === "imes") {
+              textoDesencriptado += mapaVocales["imes"];
+              i += 3;
+            } else {
+              textoDesencriptado += areaTexto[i];
+            }
+          } else if (areaTexto[i] === "o") {
+            if (areaTexto.slice(i, i + 4) === "ober") {
+              textoDesencriptado += mapaVocales["ober"];
+              i += 3;
+            } else {
+              textoDesencriptado += areaTexto[i];
+            }
+          } else if (areaTexto[i] === "u") {
+            if (areaTexto.slice(i, i + 4) === "ufat") {
+              textoDesencriptado += mapaVocales["ufat"];
+              i += 3;
+            } else {
+              textoDesencriptado += areaTexto[i];
+            }
+          } else {
+            textoDesencriptado += areaTexto[i];
+          }
+        }
+        document.getElementById(
+          "caja_con_respuesta"
+        ).innerHTML = `<p id='resultado_texto'>${textoDesencriptado}</p>
+        <button onclick='copiar()' class='copiar_boton'>Copiar</button>`;
+      }
+
+      function copiar() {
+        const textoCopiado = document.getElementById("resultado_texto");
+        const rango = document.createRange();
+        window.getSelection().removeAllRanges();
+        rango.selectNode(textoCopiado);
+        window.getSelection().addRange(rango);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        console.log("texto copiado: " + rango);
+      }
+
+      function limpiarDisplay() {
+        document.getElementById(
+          "caja_con_respuesta"
+        ).innerHTML = `<img src="assets/Muñeco.svg" alt="no-se-encontro-texto" class="imagen_caja_con_respuesta">
+        <div class="texto_caja_con_respuesta">
+        <h4>Ningun mensaje fue encontrado</h4>
+        <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </div>`;
+        document.getElementById("area_de_texto").value = "";
       }
     </script>
   </body>
