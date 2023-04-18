@@ -21,7 +21,7 @@ body {
 }
 
 .contenedor-botones {
-  display: block;
+  display: flex;
 }
 
 #caja_con_respuesta {
@@ -153,7 +153,6 @@ body {
   }
 
   .contenedor-botones {
-    display: flex;
     flex-direction: column;
     gap: 6px;
     align-items: center;
@@ -163,5 +162,45 @@ body {
   .copiar_boton {
     width: 300px;
     margin-top: 150px;
+  }
+}
+
+@media (max-width: 425px) {
+  .contenedor-principal {
+    flex-direction: column;
+  }
+  .encabezado {
+    margin-top: 24px;
+    margin-left: 16px;
+  }
+
+  .contenedor_advertencia_botones {
+    margin-top: 200px;
+  }
+
+  #area_de_texto {
+    width: 300px;
+  }
+
+  .contenedor-botones {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .imagen_caja_con_respuesta {
+    display: none;
+  }
+
+  #caja_con_respuesta {
+    width: 327px;
+    height: auto;
+    padding: 15px 10px;
+    margin: 10px 50px;
+  }
+
+  .copiar_boton {
+    margin-top: 100px;
+    width: 150px;
   }
 }
