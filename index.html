@@ -26,7 +26,9 @@
               <p>solo letras minusculas y sin acentos</p>
             </div>
             <div class="contenedor-botones">
-              <button class="encriptador_boton">Encriptar</button>
+              <button class="encriptador_boton" onclick="encriptador()">
+                Encriptar
+              </button>
               <button class="desencriptador_boton">Desencriptar</button>
               <button class="borrar_boton">Limpiar</button>
             </div>
@@ -45,6 +47,31 @@
         </div>
       </div>
     </main>
-    <script></script>
+    <script>
+      function encriptador() {
+        const areaTexto = document.getElementById("area_de_texto").value;
+        let textoEncriptado = "";
+        for (let i = 0; i < areaTexto.length; i++) {
+          const letra = areaTexto[i];
+          if (letra === "a") {
+            textoEncriptado += "ai";
+          } else if (letra === "e") {
+            textoEncriptado += "enter";
+          } else if (letra === "i") {
+            textoEncriptado += "imes";
+          } else if (letra === "o") {
+            textoEncriptado += "ober";
+          } else if (letra === "u") {
+            textoEncriptado += "ufat";
+          } else {
+            textoEncriptado += letra;
+          }
+        }
+        document.getElementById(
+          "caja_con_respuesta"
+        ).innerHTML = `<p id='resultado_texto'>${textoEncriptado}</p> 
+        <button onclick='copiar()'>Copiar</button>`;
+      }
+    </script>
   </body>
 </html>
