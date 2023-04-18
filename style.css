@@ -112,3 +112,56 @@ body {
   gap: 5px;
   width: 500px;
 }
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .contenedor-principal {
+    flex-direction: column;
+  }
+
+  .encabezado {
+    margin-top: 24px;
+    margin-left: 16px;
+  }
+
+  .contenedor-display {
+    margin-left: 70px;
+  }
+
+  .imagen_caja_con_respuesta {
+    display: none;
+  }
+
+  #area_de_texto {
+    width: 500px;
+  }
+
+  #caja_con_respuesta {
+    width: 500px;
+    height: auto;
+    padding: 15px 10px;
+    margin-top: 10px;
+    margin-left: 70px;
+  }
+
+  .advertencia {
+    margin-left: 100px;
+  }
+
+  .contenedor_advertencia_botones {
+    margin-top: 150px;
+    margin-right: 70px;
+  }
+
+  .contenedor-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .copiar_boton {
+    width: 300px;
+    margin-top: 150px;
+  }
+}
