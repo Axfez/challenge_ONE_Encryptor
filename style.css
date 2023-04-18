@@ -1,0 +1,101 @@
+body {
+  background-color: darkgray;
+}
+
+.contenedor-principal {
+  margin: 0px;
+  display: flex;
+}
+
+.encabezado {
+  margin-top: 40px;
+  margin-left: 84px;
+}
+
+.contenedor-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 100px;
+}
+
+.contenedor-botones {
+  display: block;
+}
+
+#caja_con_respuesta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 944px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 32px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+#area_de_texto {
+  width: 950px;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-right: 100px;
+  padding: 10px;
+  resize: none;
+  background-color: inherit;
+}
+
+.imagen_caja_con_respuesta {
+  margin-bottom: 35px;
+}
+
+.texto_caja_con_respuesta {
+  gap: 16px;
+}
+
+.contenedor_advertencia_botones {
+  margin-top: 470px;
+  display: block;
+}
+
+.encriptador_boton {
+  width: 328px;
+  height: 67px;
+  background-color: #0a3871;
+  border: none;
+  border-radius: 24px;
+  color: #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.desencriptador_boton {
+  width: 328px;
+  height: 67px;
+  background-color: #d8dfe8;
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+  color: #0a3871;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.borrar_boton {
+  width: 328px;
+  height: 67px;
+  background-color: #e8d8d8;
+  border: 1px solid #710a0a;
+  border-radius: 24px;
+  color: #710a0a;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.advertencia {
+  display: flex;
+  gap: 5px;
+  width: 500px;
+}
